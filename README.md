@@ -183,7 +183,7 @@ Data Cleaning
 Duplicate Removal
       │
       ▼
-EDA
+     EDA
       │
       ▼
 Feature Engineering
