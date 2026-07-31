@@ -1,183 +1,223 @@
-📩 Spam SMS Classification using Logistic Regression
+# 📧 Spam Email Classification using Logistic Regression
 
-A complete Machine Learning classification project for detecting spam messages using the SMS Spam Collection Dataset. This project covers the entire ML workflow, from data exploration and feature engineering to model evaluation and hyperparameter tuning.
+> A complete end-to-end Machine Learning project for SMS spam detection using TF-IDF vectorization and Logistic Regression.
 
-⭐ Project Highlights
+---
 
-* ✅ Complete end-to-end Machine Learning workflow
-* ✅ Data Cleaning & Duplicate Handling
-* ✅ Exploratory Data Analysis (EDA)
-* ✅ Text-based Feature Engineering
-* ✅ Text Preprocessing & TF-IDF Vectorization
-* ✅ Logistic Regression Classification
-* ✅ Hyperparameter Tuning with GridSearchCV with 5-Fold Cross Validation
-* ✅ Comprehensive Model Evaluation
-* ✅ Confusion Matrix & Classification Report Visualization
+## 📖 Overview
 
-📌 Project Overview
-The objective of this project is to build a machine learning model capable of classifying SMS messages as spam or legitimate (ham) based on their text content.
-The project follows a complete machine learning pipeline including:
+This project builds a complete Machine Learning pipeline capable of classifying SMS messages as **Spam** or **Ham**.
 
-* Exploratory Data Analysis (EDA)
-* Data Cleaning
-* Duplicate Removal
-* Feature Engineering
-* Text Preprocessing
-* TF-IDF Vectorization
-* Model Training
-* Hyperparameter Tuning
-* Model Evaluation
+The project covers every major stage of a real-world ML workflow:
 
-📊 Dataset
-Dataset: SMS Spam Collection Dataset
-Each record contains:
+- Data Cleaning
+- Duplicate Removal
+- Exploratory Data Analysis (EDA)
+- Feature Engineering
+- Text Preprocessing
+- TF-IDF Vectorization
+- Model Training
+- Hyperparameter Tuning
+- Performance Evaluation
 
-* Label — the message category
-* Message — the raw SMS text
+Instead of focusing only on achieving high accuracy, the project emphasizes **building a clean, reproducible, and trustworthy machine learning pipeline**.
 
-Target Variable:
+---
 
-* Label
-   * ham → Legitimate Message
-   * spam → Spam Message
+## ✨ Features
 
-🛠 Data Preprocessing
-The following preprocessing steps were performed:
+✔ Duplicate Detection & Removal
 
-* Checked dataset structure and descriptive statistics
-* Identified duplicate records
-* Removed 403 duplicate rows before splitting the data
-* Verified no missing values were present
-* Converted all message text to lowercase
-* Split data into training and test sets (80/20)
-* Vectorized text using TF-IDF (fit on training data only)
+✔ Missing Value Check
 
-📈 Exploratory Data Analysis
-EDA includes:
+✔ Exploratory Data Analysis
 
-* Class distribution (ham vs. spam)
-* Engineered text-based features:
-   * Message Length
-   * Word Count
-   * Exclamation Mark Count
-   * Digit Count
-   * URL Presence
-* Feature distributions by class (histograms & boxplots)
+✔ Text Feature Engineering
 
-These visualizations help understand how spam messages differ structurally from legitimate messages.
+✔ TF-IDF Vectorization
 
-🤖 Machine Learning Model
-Algorithm
+✔ Logistic Regression Classifier
 
-* Logistic Regression
+✔ GridSearchCV Hyperparameter Tuning
 
-Model selection process:
+✔ Cross Validation
 
-* TF-IDF feature extraction from message text
-* Hyperparameter tuning using GridSearchCV
-* Grid search over regularization strength (C) and solver
-* 5-Fold Cross Validation, optimized for F1-score
+✔ Evaluation using multiple metrics
 
-📊 Model Evaluation
-The model was evaluated using multiple classification metrics:
+- Accuracy
+- Precision
+- Recall
+- F1 Score
+- Jaccard Index
+- Log Loss
+- Confusion Matrix
+- Classification Report
 
-* Accuracy
-* Precision
-* Recall
-* F1-Score
-* Jaccard Index
-* Log Loss
-* Confusion Matrix
-* Classification Report
+---
 
-This provides a comprehensive evaluation rather than relying only on accuracy — an important consideration given the imbalanced nature of spam datasets.
+## 📂 Dataset
 
-📈 Final Performance
-Best Hyperparameters
+Dataset:
 
-* C: 100.0
-* Solver: lbfgs
+SMS Spam Collection Dataset
 
-Test Accuracy
+Original samples:
 
-* 98%
+**5,572**
 
-Additional evaluation metrics:
+After removing duplicates:
 
-* F1-Score: 0.94
-* Jaccard Index: 0.89
-* Precision & Recall (spam class): 0.96 / 0.92
-* Confusion Matrix
-* Classification Report
+**5,169**
 
-📚 Libraries Used
+Classes:
 
-* NumPy
-* Pandas
-* Matplotlib
-* Seaborn
-* Scikit-Learn
+- Ham
+- Spam
 
-⚙️ Installation
-Clone the repository:
+---
+
+## 🛠 Tech Stack
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-Learn
+
+---
+
+# 📊 Exploratory Data Analysis
+
+Several statistical features were extracted to better understand the dataset.
+
+Examples include:
+
+- Message Length
+- Word Count
+- Exclamation Count
+- Digit Count
+- URL Presence
+
+EDA showed that spam messages generally:
+
+- are longer
+- contain more digits
+- contain more exclamation marks
+- include URLs more frequently
+
+---
+
+# ⚙️ Text Preprocessing
+
+The preprocessing pipeline consists of:
+
+- Lowercasing
+- Train/Test Split
+- TF-IDF Vectorization
+
+The final model was trained using TF-IDF features only.
+
+---
+
+# 🤖 Model
+
+Classifier:
+
+**Logistic Regression**
+
+Hyperparameter tuning was performed using **GridSearchCV** with **5-Fold Cross Validation**.
+
+Best Parameters:
 
 ```
-git clone git@github.com:MohammadNasrollahiCE/Email-Spam-Classification.git
-cd Spam-Classification-LogisticRegression
+C = 100
+solver = lbfgs
 ```
 
-Install the required packages:
+Best Cross Validation F1 Score:
 
 ```
+≈ 0.94
+```
+
+    --
+
+# 📈 Results
+
+| Metric | Score |
+|---------|------:|
+| Accuracy | 0.98 |
+| Precision | 0.96 |
+| Recall | 0.92 |
+| F1 Score | 0.94 |
+| Jaccard Index | 0.89 |
+
+---
+
+# 📊 Confusion Matrix
+
+| | Predicted Ham | Predicted Spam |
+|---|---:|---:|
+| Actual Ham | 889 | 5 |
+| Actual Spam | 11 | 129 |
+
+---
+
+# 📁 Project Structure
+
+```
+Spam-Email-Classifier/
+│
+├── Spam-Email-Classifier-LogReg.ipynb
+├── spam.csv
+└── README.md
+```
+
+---
+
+# 🚀 How to Run
+
+```bash
+git clone https://github.com/yourusername/Spam-Email-Classifier.git
+
+cd Spam-Email-Classifier
+
 pip install -r requirements.txt
-```
 
-Run the Jupyter Notebook:
-
-```
 jupyter notebook
 ```
 
-📂 Project Structure
+Run the notebook step-by-step.
 
-```
-Spam-Classification-LogisticRegression/
-│
-├── Spam-Email-Classifier-LogReg.ipynb
-├── README.md
-├── requirements.txt
-│
-└── dataset/
-    └── SMSSpamCollection
+---
 
-```
+# 📌 Future Improvements
 
-🚀 Key Concepts Demonstrated
+- Pipeline API
+- Model Persistence with Joblib
+- Compare with Naive Bayes
+- Compare with Linear SVM
+- Use ColumnTransformer
+- Deploy using Streamlit
+- REST API using FastAPI
 
-* Binary Classification
-* Data Cleaning
-* Duplicate Removal
-* Text-based Feature Engineering
-* Exploratory Data Analysis
-* Text Preprocessing
-* TF-IDF Vectorization
-* Logistic Regression Classification
-* Hyperparameter Tuning
-* GridSearchCV
-* Cross Validation
-* Model Evaluation
+---
 
-📖 Learning Objectives
-This project demonstrates a complete machine learning classification workflow and serves as a practical example of building, tuning, and evaluating a text classification model using Scikit-Learn.
+# 👨‍💻 Author
 
-👨‍💻 Author
-Mohammad Nasrollahi 'Arad'
+**Mohammad Nasrollahi**
+
 Computer Engineering Student
-Interested in:
 
-* Machine Learning
-* Data Science
-* Artificial Intelligence
+Machine Learning Enthusiast
 
-GitHub: https://github.com/MohammadNasrollahiCE
+GitHub:
+https://github.com/yourusername
 
+LinkedIn:
+https://linkedin.com/in/yourprofile
+
+---
+
+## ⭐ If you found this project useful, consider giving it a star!
