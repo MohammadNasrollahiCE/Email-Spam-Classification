@@ -1,4 +1,5 @@
 📩 Spam SMS Classification using Logistic Regression
+
 A complete Machine Learning classification project for detecting spam messages using the SMS Spam Collection Dataset. This project covers the entire ML workflow, from data exploration and feature engineering to model evaluation and hyperparameter tuning.
 
 ⭐ Project Highlights
