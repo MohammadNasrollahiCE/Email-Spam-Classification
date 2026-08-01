@@ -60,6 +60,7 @@ The project follows a complete ML pipeline including:
 - Feature Engineering
 - Text Preprocessing
 - TF-IDF Vectorization
+- Creating Pipeline (MuliFeature version)
 - Model Training
 - Hyperparameter Tuning
 - Model Evaluation
@@ -163,7 +164,7 @@ This provides a more reliable evaluation than relying solely on accuracy.
 
 | Metric | Score |
 |---------|------:|
-| Accuracy | **98%** |
+| Accuracy | **99%** |
 | Precision | **0.96** |
 | Recall | **0.92** |
 | F1-Score | **0.94** |
@@ -246,6 +247,7 @@ jupyter notebook
 Spam-Classification-LogisticRegression/
 │
 ├── Spam-Email-Classifier-LogReg.ipynb
+├── Spam-Email-Classifier-MultiFeature-LogReg.ipynb
 ├── README.md
 ├── requirements.txt
 │
