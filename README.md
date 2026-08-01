@@ -40,7 +40,9 @@
 - ✅ Data Cleaning & Duplicate Handling
 - ✅ Exploratory Data Analysis (EDA)
 - ✅ Text-based Feature Engineering
-- ✅ Text Preprocessing & TF-IDF Vectorization
+- ✅ TF-IDF Vectorization
+- ✅ Feature Engineering with Statistical Text Features
+- ✅ Scikit-Learn Pipeline Implementation
 - ✅ Logistic Regression Classification
 - ✅ GridSearchCV with 5-Fold Cross Validation
 - ✅ Comprehensive Model Evaluation
@@ -90,12 +92,24 @@ Each record contains:
 The following preprocessing steps were performed:
 
 - Checked dataset structure and descriptive statistics
-- Identified duplicate records
-- Removed **403 duplicate rows**
+- Removed duplicate records
 - Verified no missing values
-- Converted messages to lowercase
-- Split dataset into **80% Train / 20% Test**
-- Applied **TF-IDF Vectorization** (fit only on training data)
+- Converted all messages to lowercase
+- Split the dataset into training and testing sets (80/20)
+
+### Feature Engineering
+
+In addition to the original message text, several handcrafted statistical features were extracted and incorporated into the final model:
+
+- Message Length
+- Word Count
+- Exclamation Mark Count
+- Digit Count
+- URL Presence
+
+The message text was vectorized using **TF-IDF**, while the engineered numerical features were combined with the TF-IDF representation to create the final feature matrix.
+
+The final model achieved outstanding performance while maintaining a clean and reproducible machine learning workflow through the use of Scikit-Learn Pipelines.
 
 ---
 
@@ -165,10 +179,11 @@ This provides a more reliable evaluation than relying solely on accuracy.
 | Metric | Score |
 |---------|------:|
 | Accuracy | **99%** |
-| Precision | **0.96** |
-| Recall | **0.92** |
-| F1-Score | **0.94** |
-| Jaccard Index | **0.89** |
+| Precision | **0.98** |
+| Recall | **0.98** |
+| F1-Score | **0.96** |
+| Jaccard Index | **0.92** |
+
 
 ---
 
@@ -187,13 +202,16 @@ Duplicate Removal
      EDA
       │
       ▼
-Feature Engineering
-      │
-      ▼
-Text Preprocessing
+Statistical Feature Engineering
       │
       ▼
 TF-IDF Vectorization
+      │
+      ▼
+Feature Combination
+      │
+      ▼
+Scikit-Learn Pipeline
       │
       ▼
 GridSearchCV
@@ -262,11 +280,10 @@ Spam-Classification-LogisticRegression/
 | Concept | Status |
 |---------|:------:|
 | Binary Classification | ✅ |
-| Data Cleaning | ✅ |
-| Duplicate Removal | ✅ |
 | Feature Engineering | ✅ |
-| Text Preprocessing | ✅ |
+| Statistical Text Features | ✅ |
 | TF-IDF Vectorization | ✅ |
+| Scikit-Learn Pipeline | ✅ |
 | Logistic Regression | ✅ |
 | Hyperparameter Tuning | ✅ |
 | GridSearchCV | ✅ |
@@ -275,9 +292,17 @@ Spam-Classification-LogisticRegression/
 
 ---
 
+# 💡 What Makes This Project Different?
+
+Unlike many introductory spam classifiers that rely solely on TF-IDF features, this project combines textual representations with handcrafted statistical features through a Scikit-Learn Pipeline. This approach improves model performance while keeping the workflow modular, reproducible, and ready for deployment.
+
+---
+
 # 📖 Learning Objectives
 
-This project demonstrates a complete Machine Learning classification workflow and serves as a practical example of building, tuning, and evaluating a text classification model using **Scikit-Learn**.
+This project demonstrates a production-style Machine Learning workflow for text classification using Scikit-Learn.
+
+The implementation covers data preprocessing, statistical feature engineering, TF-IDF vectorization, feature integration, pipeline construction, hyperparameter tuning, and comprehensive model evaluation.
 
 ---
 
